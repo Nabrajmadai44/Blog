@@ -19,6 +19,12 @@
 
       {% if request.user.is_authenticated %}
 
+      <form action="{% url 'logout' %}" method="post" class="top-menu">
+        {% csrf_token %}
+        <button type="submit" class="link">
+          <span class="material-symbols-outlined lg-icons">logout</span>
+        </button>
+      </form>
       <a href="#" class="top-menu">
         <span class="material-symbols-outlined lg-icons">add</span>
       </a>
@@ -27,13 +33,9 @@
         <span class="material-symbols-outlined lg-icons">draft</span>
       </a>
 
-      <a href="#" class="top-menu">
-        <span class="material-symbols-outlined lg-icons">logout</span>
-      </a>
-
       {% else %}
 
-      <a href="#" class="top-menu">
+      <a href="{% url 'login' %}" class="top-menu">
         <span class="material-symbols-outlined lg-icons">login</span>
       </a>
 
