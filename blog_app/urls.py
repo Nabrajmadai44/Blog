@@ -7,5 +7,7 @@ urlpatterns = [
     path("post_delete/<int:pk>/", views.post_delete, name= "post-delete"),
     path("draft_list", views.draft_list, name= "draft-list"),
     path("draft_detail/<int:pk>/", views.draft_detail, name= "draft-detail"),
-    path("post_edit/<int:pk>/", views.post_edit, name = "post-edit"),
+    path("draft_publish/<int:pk>/", views.draft_publish, name = "draft-publish"),
+    path("post_create/", views.post_create, name="post-create"),
+    path("post_update/<int:pk>/", views.post_update, name= "post-update")
 ]
